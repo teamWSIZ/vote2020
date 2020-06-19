@@ -21,7 +21,6 @@ export class AppComponent {
       // this.router.navigate(['adm']);
     } else if (event.shiftKey && event.key === 'Enter') {
       //shift-enter włącza tryb admina
-      this.g.admin = !this.g.admin;
     }
   }
 

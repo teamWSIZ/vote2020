@@ -4,8 +4,6 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class GService {
-  admin = true;
-  pass = 'secret';
-  data = 'https://api.wsi.edu.pl/backend';
+  data = 'http://10.10.0.200';
   constructor() { }
 }
