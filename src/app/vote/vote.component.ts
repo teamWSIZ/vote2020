@@ -14,6 +14,7 @@ export class VoteComponent implements OnInit {
   choices: Choice[] = [];
 
   constructor(private http: HttpClient, private g: GService) {
+    console.log(`Tworzę komponent vote`);
   }
 
   ngOnInit(): void {
