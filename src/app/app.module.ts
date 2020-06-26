@@ -8,12 +8,18 @@ import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {ChartsModule} from "ng2-charts";
 import { VoteComponent } from './vote/vote.component';
+import { LoginComponent } from './login/login.component';
+import { ResultsComponent } from './results/results.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     VoteComponent,
+    LoginComponent,
+    ResultsComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,
