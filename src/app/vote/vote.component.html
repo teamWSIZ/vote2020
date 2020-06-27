@@ -1,47 +1,40 @@
+
 <div class="row no-gutters">
-  <div class="col-md-2"></div>
-  <div class="col-md-8">
-    <div class="card">
-      <div class="card-header h3">
-        {{vote_title}}
-      </div>
-      <div class="card-body">
-
-        <!-- rysujemy wszystkie wybory dostępne wyborcy -->
-
-
-        <table class="table table-hover">
-          <thead class="thead-dark">
-          <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Kandydat</th>
-            <th scope="col"></th>
-            <th scope="col">Wybór</th>
-          </tr>
-          </thead>
-          <tbody>
-
-          <tr *ngFor="let choice of choices">
-            <td class="h5">{{choice.choiceid}}  </td>
-            <td class="h5">{{choice.title}}</td>
-            <td>
-              <img [src]="choice.url" height="80">
-            </td>
-            <td>
-              <button class="btn btn-outline-light"
-              [ngClass]="{'btn-success':choice.selected}"
-                      (click)="select(choice)"
-
-              >(wybierz)</button>
-            </td>
-          </tr>
-
-
-          </tbody>
-        </table>
-
-
-
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <div class="box">
+      <div class="content">
+        <div class="card">
+          <div class="card-header h2">
+            {{vote_title}}
+          </div>
+          <!-- rysujemy wszystkie wybory dostępne wyborcy -->
+          <table class="table table-hover">
+            <thead class="thead">
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Kandydat</th>
+              <th scope="col"></th>
+              <th scope="col">Wybór</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let choice of choices">
+              <td class="h5">{{choice.choiceid}}  </td>
+              <td class="h5">{{choice.title}}</td>
+              <td>
+                <img [src]="choice.url" height="80">
+              </td>
+              <td>
+                <button class="btn btn-outline-light"
+                        [ngClass]="{'btn-success':choice.selected}"
+                        (click)="select(choice)"
+                >(wybierz)</button>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
       <div class="card-footer text-center">
         <button class="btn btn-outline-info"
@@ -49,10 +42,9 @@
                 (click)="vote()"
         >Oddaj wiążący głos</button>
       </div>
-
     </div>
-
-
   </div>
-  <div class="col-md-2"></div>
 </div>
+
+
+
