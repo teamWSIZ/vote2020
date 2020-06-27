@@ -8,14 +8,12 @@ import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {ChartsModule} from "ng2-charts";
 import { VoteComponent } from './vote/vote.component';
-import { ChoiceViewComponent } from './choice-view/choice-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     VoteComponent,
-    ChoiceViewComponent,
   ],
   imports: [
     BrowserModule,
