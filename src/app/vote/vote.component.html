@@ -1,50 +1,78 @@
 
-<div class="row no-gutters">
-  <div class="col-md-4"></div>
-  <div class="col-md-4">
-    <div class="box">
+<div class="row">
+  <div class="col-md-6">
+
+    <div class="box m-3">
+
       <div class="content">
-        <div class="card">
-          <div class="card-header h2">
-            {{vote_title}}
-          </div>
-          <div class="card-body">
-            <!-- rysujemy wszystkie wybory dostępne wyborcy -->
-            <table class="table table-borderless">
-              <thead class="thead">
-              <tr>
-                <th scope="col">Id</th>
-                <th scope="col">Kandydat</th>
-                <th scope="col"></th>
-              </tr>
-              </thead>
-              <tbody>
-              <tr *ngFor="let choice of choices" (click)="select(choice)"
-                  class="clickable"
-                  [ngClass]="{'selected': choice==selected}">
-                <td class="h5">{{choice.visibleid}}  </td>
-                <td class="h5">{{choice.title}}</td>
-                <td>
-                  <img [src]="choice.url" height="80" alt="(kandydat)">
-                </td>
-              </tr>
-              </tbody>
-            </table>
+        <div class="card-light" style=" width: 800px;">
+      <div class="card-header h3">
+        {{vote_title}}
+      </div>
+      <div class="card-body">
 
-          </div>
+        <!-- rysujemy wszystkie wybory dostępne wyborcy -->
 
-          <div class="card-footer text-center">
-            <button class="btn btn-outline-info btn-lg"
-                    title="Głos zostanie przesłany do systemu wyborczego; jego cofnięcie nie będzie już możliwe!"
-                    (click)="vote()"
-            >Oddaj wiążący głos</button>
-          </div>
-        </div>
+
+        <table class="table table-hover">
+          <thead class="thead">
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Wybór</th>
+            <th scope="col">Kandydat</th>
+            <th scope="col"></th>
+
+          </tr>
+          </thead>
+          <tbody>
+
+          <tr *ngFor="let choice of choices" class="clickable trow">
+            <td class="h5 trow">{{choice.choiceid}}
+            </td>
+            <td class="h5 trow">
+              <label class="container" [ngClass]="{'btn':choice.selected}"
+                     (click)="select(choice)">
+                <input type="radio"  name="radio">
+                <span class="checkmark"></span>
+              </label>
+            </td>
+
+            <td class="h5 trow">{{choice.title}}</td>
+            <td class="h5 trow">
+              <img [src]="choice.url" height="80">
+            </td>
+<!--            <td>-->
+<!--              <button class="btn btn-outline-light"-->
+<!--              [ngClass]="{'btn-success':choice.selected}"-->
+<!--                      (click)="select(choice)">  wybierz  </button>-->
+<!--            </td>-->
+          </tr>
+
+          </tbody>
+        </table>
+
       </div>
 
+  </div>
+
+
+
+</div>
     </div>
   </div>
+
+  <div class="col-md-6" >
+    <img src="assets/g.png" alt="godlo Polski" class="center mr-5  " width="400px" align="right"  >
+    </div>
 </div>
 
 
 
+    <div class="footer">
+
+    <br/>
+      <br/>
+      <p>Footer</p>
+      <br/>
+      <br/>
+    </div>

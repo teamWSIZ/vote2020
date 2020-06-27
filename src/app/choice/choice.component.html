@@ -5,7 +5,7 @@
       <div class="card-header h4">Rejestracja do wyborów</div>
       <div class="card-body">
         <table class="table table-borderless">
-          <thead class="thead-dark">
+          <thead class="thead-light">
           <tr>
             <th scope="col">Głosowanie</th>
             <th scope="col">Data zakończenia</th>
@@ -24,7 +24,7 @@
         </table>
 
         <p class="text-right">
-          <button class="btn btn-primary" [disabled]="!selectedElection" (click)="go_vote()"> Pobierz kartę wyborczą</button>
+          <button class="btn btn-success" [disabled]="!selectedElection" (click)="go_vote()"> Pobierz kartę wyborczą</button>
         </p>
       </div>
     </div>

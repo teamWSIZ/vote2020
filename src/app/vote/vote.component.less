@@ -1,4 +1,6 @@
-
+.trow {
+  border-top: 1px rgba(255, 255, 255, 0.51) solid;
+}
 * {
   margin: 0;
   padding: 0;
@@ -95,7 +97,7 @@ body{
 
 
 .footer {
-  position: relative;
+  position: running();
   bottom: 0;
   width: 100%;
   background-color: black;
@@ -104,16 +106,57 @@ body{
   margin-top: 20px;
 }
 
+//checkboxy tutaj
 
-.selected {
-  background-color: #721414;
+input {
+  display: none;
 }
 
-tr {
-  border-top: 1px #2f2a2a solid;
 
+label {
+  display: inline-block;
+  padding: 5px 10px;
+  cursor: pointer;
 }
 
+label span {
+  position: relative;
+  line-height: 22px;
+}
+
+label span:before,
+label span:after {
+  content: '';
+}
+
+label span:before {
+  border: 1px solid #ffffff;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+label span:after {
+  padding-left:25px;
+  background:url(src/assets/x1-01.png) no-repeat top left;
+  display: inline-block;
+  zoom: 1;
+  *display:inline;
+  //background: red;
+   width: 30px;
+   height: 30px;
+   position: absolute;
+   top: -2px;
+   left: 0px;
+  vertical-align: top;
+   transition: 300ms;
+   opacity: 0;
+ }
+label input:checked+span:after {
+  opacity: 1;
+}
 
 @media (min-width: 544px) {
 }
