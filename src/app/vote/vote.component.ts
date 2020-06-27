@@ -12,13 +12,14 @@ import {VoteData} from "../_model/vote-data";
 export class VoteComponent implements OnInit {
   vote_title = 'Wybory testowe 2020';
   choices: Choice[] = [];
+  selected: Choice;
 
   constructor(private http: HttpClient, private g: GService) {
     console.log(`Tworzę komponent vote`);
   }
 
   ngOnInit(): void {
-    let url = this.g.data + '/choices?electionid=1';
+    let url = this.g.data + `/choices?electionid=${this.g.selected_election.electionid}`;
     this.http.get<Choice[]>(url).subscribe(chs => {
       this.choices = chs;
     })
@@ -29,6 +30,7 @@ export class VoteComponent implements OnInit {
       ch.selected = false;
     });
     choice.selected = true;
+    this.selected = choice;
   }
 
   vote() {

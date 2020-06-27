@@ -4,23 +4,28 @@
     <div class="card">
       <div class="card-header h4">Rejestracja do wyborów</div>
       <div class="card-body">
-        <table class="table table-hover">
+        <table class="table table-borderless">
           <thead class="thead-dark">
           <tr>
-            <th scope="col">Nazwa</th>
-            <th scope="col">Koniec głosowania</th>
+            <th scope="col">Głosowanie</th>
+            <th scope="col">Data zakończenia</th>
           </tr>
           </thead>
           <tbody>
 
-          <tr *ngFor="let el of elections">
+          <tr *ngFor="let el of elections" (click)="selectedElection=el" class="clickable trow"
+          [ngClass]="{'selected': el==selectedElection}"
+          >
             <td class="h5">{{el.title}}  </td>
             <td class="h5">{{el.voteend | date: 'dd MMMM yyyy HH:ss'}}</td>
           </tr>
-<!--wygląd do wymiany-->
 
           </tbody>
         </table>
+
+        <p class="text-right">
+          <button class="btn btn-primary" [disabled]="!selectedElection" (click)="go_vote()"> Pobierz kartę wyborczą</button>
+        </p>
       </div>
     </div>
 

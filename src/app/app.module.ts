@@ -12,6 +12,10 @@ import { LoginComponent } from './login/login.component';
 import { ResultsComponent } from './results/results.component';
 import { AdminComponent } from './admin/admin.component';
 import { ChoiceComponent } from './choice/choice.component';
+import { LOCALE_ID } from '@angular/core';
+import localePl from '@angular/common/locales/pl';
+import {registerLocaleData} from "@angular/common";
+registerLocaleData(localePl, 'pl');
 
 @NgModule({
   declarations: [
@@ -30,7 +34,7 @@ import { ChoiceComponent } from './choice/choice.component';
     HttpClientModule,
     ChartsModule
   ],
-  providers: [MenuComponent],
+  providers: [MenuComponent, { provide: LOCALE_ID, useValue: 'pl' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
