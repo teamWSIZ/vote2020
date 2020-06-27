@@ -25,7 +25,10 @@ export class ChoiceComponent implements OnInit {
 
   go_vote() {
     this.g.selected_election = this.selectedElection;
-    this.router.navigate(['vote']);
-
+    let url = `${this.g.data}/register?authtoken=${this.g.wdauth}&electionid=${this.g.selected_election.electionid}`;
+    this.http.get<any>(url).subscribe(res => {
+      this.g.election_token = res.election_token;
+      this.router.navigate(['vote']);
+    })
   }
 }

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Election} from "./_model/election";
 
 @Injectable({
@@ -9,5 +9,12 @@ export class GService {
   uuid: string;
   wdauth: string;
   selected_election: Election;
-  constructor() { }
+  election_token = '';
+  constructor() {
+  }
+  logout() {
+    this.uuid = '';
+    this.wdauth = '';
+    this.election_token = '';
+  }
 }
