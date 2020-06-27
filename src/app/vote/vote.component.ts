@@ -21,6 +21,7 @@ export class VoteComponent implements OnInit {
   ngOnInit(): void {
     let url = this.g.data + `/choices?electionid=${this.g.selected_election.electionid}`;
     this.http.get<Choice[]>(url).subscribe(chs => {
+      chs.sort((a, b) => a.visibleid.localeCompare(b.visibleid));
       this.choices = chs;
     })
   }
@@ -40,10 +41,12 @@ export class VoteComponent implements OnInit {
       if (ch.selected) vote = 1;
       res.push(new VoteData(1, ch.choiceid, vote));
     });
-    let url = this.g.data + '/vote'
+    let url = `${this.g.data}/vote?election_token=${this.g.election_token}`
     this.http.post<string>(url, res).subscribe(r => {
-      console.log('done');
       alert('Dzięki za wzięcie udziału w wyborach!');
+    }, error => {
+      alert('Wystąpił błąd zapisu wyniku; Twój głos niestety nie może być przyjęty. Spróbuj może za chwilę, ' +
+        'nie restartując przeglądarki.')
     });
 
 

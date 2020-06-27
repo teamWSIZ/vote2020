@@ -24,7 +24,8 @@
         </table>
 
         <p class="text-right">
-          <button class="btn btn-primary" [disabled]="!selectedElection" (click)="go_vote()"> Pobierz kartę wyborczą</button>
+          <button class="btn btn-primary" *ngIf="elections.length==0"> Brak dostępnych wyborów -- wyloguj</button>
+          <button class="btn btn-primary" *ngIf="elections.length>0" [disabled]="!selectedElection" (click)="go_vote()"> Pobierz kartę wyborczą</button>
         </p>
       </div>
     </div>
