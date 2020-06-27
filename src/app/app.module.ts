@@ -10,6 +10,7 @@ import {ChartsModule} from "ng2-charts";
 import { VoteComponent } from './vote/vote.component';
 import { ChoiceViewComponent } from './choice-view/choice-view.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

@@ -1,14 +1,103 @@
 
-.card {
-  background-color: rgba(68,68,68,0.9);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  //font-family: ;
+}
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-wrap: wrap;
+  background: #000000;
+}
+
+.box .glass{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 100% ;
+  display: block;
+  background: black;
+  pointer-events: none;
+}
+.box .content {
+  padding:20px;
+  color: #fff;
+}
+
+.box {
+  //background-color: rgba(68,68,68,0.9);
+  position: relative;
+  width: 900px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  margin: 40px;
+
+}
+.box:before
+{
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: #ffffff;
+  z-index: -1;
+}
+.box:after
+{
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: #ffffff;
+  z-index: -1;
+  filter: blur(40px);
+}
+
+.box:nth-child(1):before,
+.box:nth-child(1):after
+{
+  background: linear-gradient(235deg, #000000, #000000, #000000);
+}
+.box:nth-child(2):before,
+.box:nth-child(2):after
+{
+  background: linear-gradient(235deg, #000000, #000000, #000000);
+}
+.box:nth-child(3):before,
+.box:nth-child(3):after
+{
+  background: linear-gradient(235deg, #000000, #000000, #000000);
 }
 
 .card-header {
-  color: lightgray;
-  background-color: rgba(68,68,68,0.9);
+  color: white;
+  background-color: transparent;
+
 }
 
 
+.footer {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
 
 
 @media (min-width: 544px) {

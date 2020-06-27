@@ -1,7 +1,11 @@
-<div class="row no-gutters">
-  <div class="col-md-2"></div>
-  <div class="col-md-8">
-    <div class="card">
+
+<div class="row">
+  <div class="col-md-6">
+
+    <div class="box">
+
+      <div class="content">
+        <div class="card-light" style=" width: 800px;">
       <div class="card-header h3">
         {{vote_title}}
       </div>
@@ -11,7 +15,7 @@
 
 
         <table class="table table-hover">
-          <thead class="thead-dark">
+          <thead class="thead">
           <tr>
             <th scope="col">Id</th>
             <th scope="col">Kandydat</th>
@@ -30,24 +34,35 @@
             <td>
               <button class="btn btn-outline-light"
               [ngClass]="{'btn-success':choice.selected}"
-                      (click)="select(choice)"
-
-              >(wybierz)</button>
+                      (click)="select(choice)">  wybierz  </button>
             </td>
           </tr>
-
 
           </tbody>
         </table>
 
-
-
       </div>
-      <div class="card-footer"></div>
-
-    </div>
-
 
   </div>
-  <div class="col-md-2"></div>
+
+
+
 </div>
+    </div>
+  </div>
+
+  <div class="col-md-6" >
+    <img src="assets/g.png" alt="godlo Polski" class="center mr-5  " width="400px" align="right"  >
+    </div>
+</div>
+
+
+
+    <div class="footer">
+
+    <br/>
+      <br/>
+      <p>Footer</p>
+      <br/>
+      <br/>
+    </div>
