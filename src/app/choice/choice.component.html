@@ -1,0 +1,29 @@
+<div class="row no-gutters">
+  <div class="col-md-3"></div>
+  <div class="col-md-6 mt-5">
+    <div class="card">
+      <div class="card-header h4">Rejestracja do wyborów</div>
+      <div class="card-body">
+        <table class="table table-hover">
+          <thead class="thead-dark">
+          <tr>
+            <th scope="col">Nazwa</th>
+            <th scope="col">Koniec głosowania</th>
+          </tr>
+          </thead>
+          <tbody>
+
+          <tr *ngFor="let el of elections">
+            <td class="h5">{{el.title}}  </td>
+            <td class="h5">{{el.voteend | date: 'dd MMMM yyyy HH:ss'}}</td>
+          </tr>
+
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+  <div class="col-md-3"></div>
+</div>

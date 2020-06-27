@@ -11,6 +11,7 @@ import { VoteComponent } from './vote/vote.component';
 import { LoginComponent } from './login/login.component';
 import { ResultsComponent } from './results/results.component';
 import { AdminComponent } from './admin/admin.component';
+import { ChoiceComponent } from './choice/choice.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { AdminComponent } from './admin/admin.component';
     LoginComponent,
     ResultsComponent,
     AdminComponent,
+    ChoiceComponent,
   ],
   imports: [
     BrowserModule,

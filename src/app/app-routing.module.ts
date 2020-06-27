@@ -6,12 +6,12 @@ import {AdminComponent} from "./admin/admin.component";
 import {ResultsComponent} from "./results/results.component";
 import {GuardianService} from "./guardian.service";
 import {AdminguardianService} from "./adminguardian.service";
+import {ChoiceComponent} from "./choice/choice.component";
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full'},
   { path: 'login', component: LoginComponent},
-  { path: 'admin', component: AdminComponent, canActivate: [GuardianService, AdminguardianService]},
-  { path: 'results', component: ResultsComponent, canActivate: [GuardianService]},
+  { path: 'choice', component: ChoiceComponent},
   { path: 'vote', component: VoteComponent, canActivate: [GuardianService]},
 ];
 

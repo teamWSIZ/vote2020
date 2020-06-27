@@ -5,5 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class GService {
   data = 'http://10.10.0.200:2020';
+  uuid: string;
+  wdauth: string;
   constructor() { }
 }
