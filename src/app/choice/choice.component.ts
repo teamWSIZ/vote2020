@@ -31,4 +31,9 @@ export class ChoiceComponent implements OnInit {
       this.router.navigate(['vote']);
     })
   }
+
+  go_login() {
+    this.g.logout();
+    this.router.navigate(['login']);
+  }
 }

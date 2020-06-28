@@ -3,6 +3,7 @@ import {Choice} from "../_model/choice";
 import {HttpClient} from "@angular/common/http";
 import {GService} from "../g.service";
 import {VoteData} from "../_model/vote-data";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-vote',
@@ -14,7 +15,7 @@ export class VoteComponent implements OnInit {
   choices: Choice[] = [];
   selected: Choice;
 
-  constructor(private http: HttpClient, private g: GService) {
+  constructor(private http: HttpClient, private g: GService, private router:Router) {
     console.log(`Tworzę komponent vote`);
   }
 
@@ -39,11 +40,13 @@ export class VoteComponent implements OnInit {
     this.choices.forEach(ch => {
       let vote = 0;
       if (ch.selected) vote = 1;
-      res.push(new VoteData(1, ch.choiceid, vote));
+      res.push(new VoteData(this.g.selected_election.electionid, ch.choiceid, vote));
     });
     let url = `${this.g.data}/vote?election_token=${this.g.election_token}`
     this.http.post<string>(url, res).subscribe(r => {
-      alert('Dzięki za wzięcie udziału w wyborach!');
+      alert('Dziękujemy za wzięcie udziału w wyborach! Twój głos został zapisany. Zostaniesz automatycznie wylogowany.');
+      this.g.logout();
+      this.router.navigate(['login']);
     }, error => {
       alert('Wystąpił błąd zapisu wyniku; Twój głos niestety nie może być przyjęty. Spróbuj może za chwilę, ' +
         'nie restartując przeglądarki.')

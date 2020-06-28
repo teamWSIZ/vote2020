@@ -2,8 +2,8 @@
   border-top: 1px rgba(255, 255, 255, 0.51) solid;
 }
 * {
-  margin: 0;
-  padding: 0;
+  //margin: 0;
+  //padding: 0;
   box-sizing: border-box;
   //font-family: ;
 }
@@ -136,6 +136,27 @@ label span:before {
   margin-right: 10px;
   display: inline-block;
   vertical-align: top;
+}
+
+.emptybox {
+  height: 31px;
+  width: 32px;
+  border: 1px solid darkgray;
+  display: inline-block;
+}
+
+.selectedbox {
+  height: 31px;
+  width: 32px;
+  background:url(src/assets/x1-01.png) no-repeat top left;
+  border: 1px solid darkgray;
+  display: inline-block;
+}
+
+@media (max-width:1300px) {
+  #godlo {
+    display: none;
+  }
 }
 
 label span:after {
