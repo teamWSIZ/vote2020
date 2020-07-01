@@ -15,6 +15,7 @@ import { ChoiceComponent } from './choice/choice.component';
 import { LOCALE_ID } from '@angular/core';
 import localePl from '@angular/common/locales/pl';
 import {registerLocaleData} from "@angular/common";
+import {OkDialogComponent} from "./ok-dialog/ok-dialog.component";
 registerLocaleData(localePl, 'pl');
 
 @NgModule({
@@ -26,6 +27,7 @@ registerLocaleData(localePl, 'pl');
     ResultsComponent,
     AdminComponent,
     ChoiceComponent,
+    OkDialogComponent
   ],
   imports: [
     BrowserModule,

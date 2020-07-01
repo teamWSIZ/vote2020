@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {GuardianService} from "../guardian.service";
 import {AdminguardianService} from "../adminguardian.service";
 import {Md5} from "ts-md5";
@@ -6,6 +6,7 @@ import {Router} from "@angular/router";
 import {GService} from "../g.service";
 import {HttpClient} from "@angular/common/http";
 import {User} from "../_model/user";
+import {OkDialogComponent} from "../ok-dialog/ok-dialog.component";
 
 @Component({
   selector: 'app-login',
@@ -13,6 +14,9 @@ import {User} from "../_model/user";
   styleUrls: ['./login.component.less']
 })
 export class LoginComponent implements OnInit {
+  @ViewChild(OkDialogComponent)
+  dialog: OkDialogComponent;
+
   user = '';
   pass = '';
 
@@ -36,7 +40,11 @@ export class LoginComponent implements OnInit {
       this.guard.logged_in = true;
       this.router.navigate(['/choice']);
     }, error => {
-      alert('Błąd logowania: niepoprawne dane logowania, lub problem z serwisem');
+      this.dialog.show('Błąd logowania',
+        'Użyto niepoprawnych danych autentykacyjnych, lub serwis logowania ma problemy. Prosimy sprawdzić ' +
+        'parę login/hasło i spróbować ponownie', 'danger', ()=>{
+        });
+
     });
   }
 }

@@ -1,21 +1,19 @@
 version: "3"
 services:
-
-  x47b:
-    # replace username/repo:tag with your name and image details
-    image: rq170/x47b:1.0.0
+  vote:
+    image: rq170/vote:1.0.4
     deploy:
       replicas: 3
       resources:
         limits:
-          cpus: "0.4"
-          memory: 350M
+          cpus: "0.5"
+          memory: 100M
 
       restart_policy:
         condition: on-failure
 
     ports:
-      - "8082:80"
+      - "8075:80"
 
     networks:
       - webnet

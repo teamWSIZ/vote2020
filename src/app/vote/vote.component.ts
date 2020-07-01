@@ -1,9 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {Choice} from "../_model/choice";
 import {HttpClient} from "@angular/common/http";
 import {GService} from "../g.service";
 import {VoteData} from "../_model/vote-data";
 import {Router} from "@angular/router";
+import {OkDialogComponent} from "../ok-dialog/ok-dialog.component";
 
 @Component({
   selector: 'app-vote',
@@ -11,6 +12,9 @@ import {Router} from "@angular/router";
   styleUrls: ['./vote.component.less']
 })
 export class VoteComponent implements OnInit {
+  @ViewChild(OkDialogComponent)
+  dialog: OkDialogComponent;
+
   vote_title = 'Wybory testowe 2020';
   choices: Choice[] = [];
   selected: Choice;
@@ -44,12 +48,20 @@ export class VoteComponent implements OnInit {
     });
     let url = `${this.g.data}/vote?election_token=${this.g.election_token}`
     this.http.post<string>(url, res).subscribe(r => {
-      alert('Dziękujemy za wzięcie udziału w wyborach! Twój głos został zapisany. Zostaniesz automatycznie wylogowany.');
-      this.g.logout();
-      this.router.navigate(['login']);
+      // alert('Dziękujemy za wzięcie udziału w wyborach! Twój głos został zapisany. Zostaniesz automatycznie wylogowany.');
+
+      this.dialog.show('Twój głos został zapisany',
+        'Dziękujemy za wzięcie udziału w wyborach! Zostaniesz automatycznie wylogowany.', 'success', ()=>{
+          this.g.logout();
+          this.router.navigate(['login']);
+        });
+
     }, error => {
-      alert('Wystąpił błąd zapisu wyniku; Twój głos niestety nie może być przyjęty. Spróbuj może za chwilę, ' +
-        'nie restartując przeglądarki.')
+      this.dialog.show('Błąd zapisu wyniku',
+        'Wystąpił błąd zapisu wyniku; Twój głos na teraz niestety nie może być przyjęty. Spróbuj może za chwilę, ' +
+        'nie restartując przeglądarki.', 'danger', ()=>{
+        });
+
     });
 
 
