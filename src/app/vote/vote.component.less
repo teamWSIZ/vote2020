@@ -1,5 +1,5 @@
 .trow {
-  border-top: 1px rgba(255, 255, 255, 0.51) solid;
+  border-top: 1px solid rgba(255, 255, 255, 0.40);
 }
 * {
   //margin: 0;
@@ -7,15 +7,26 @@
   box-sizing: border-box;
   //font-family: ;
 }
-body{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  flex-wrap: wrap;
-  background: #00a379;
+//body{
+//  display: flex;
+//  justify-content: center;
+//  align-items: center;
+//  min-height: 100vh;
+//  flex-wrap: wrap;
+//  background: #00a379;
+//}
+
+.table thead th {
+  vertical-align: bottom;
+  border-top: rgba(0, 0, 0, 0);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.40);
 }
 
+.table th, .table td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid rgba(255, 255, 255, 0.40);
+}
 .box .glass{
   position: absolute;
   top: 0;
@@ -87,8 +98,11 @@ body{
   text-align: center;
 }
 .card {
-  width: 600px;
   background-color: transparent;
+}
+.card-light {
+  min-width: 40vw;
+  width:auto;
 }
 .card-footer {
   background-color: transparent;
@@ -141,7 +155,7 @@ label span:before {
 .emptybox {
   height: 31px;
   width: 32px;
-  border: 1px solid darkgray;
+  border: 1px solid rgba(255, 255, 255, 0.40);
   display: inline-block;
 }
 
@@ -149,7 +163,7 @@ label span:before {
   height: 31px;
   width: 32px;
   background:url(src/assets/x1-01.png) no-repeat top left;
-  border: 1px solid darkgray;
+  border: 1px solid rgba(255, 255, 255, 0.40);
   display: inline-block;
 }
 
