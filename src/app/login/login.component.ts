@@ -13,6 +13,9 @@ import {OkDialogComponent} from "../ok-dialog/ok-dialog.component";
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.less']
 })
+
+
+
 export class LoginComponent implements OnInit {
   @ViewChild(OkDialogComponent)
   dialog: OkDialogComponent;
@@ -46,5 +49,8 @@ export class LoginComponent implements OnInit {
         });
 
     });
+
+
   }
 }
+

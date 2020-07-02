@@ -1,11 +1,22 @@
-.trow {
-  border-top: 1px rgba(255, 255, 255, 0.51) solid;
-}
+//.trow {
+//  border-top: 1px rgba(255, 255, 255, 0.73) solid;
+//}
 * {
   //margin: 0;
   //padding: 0;
   box-sizing: border-box;
   //font-family: ;
+}
+.table thead th {
+  vertical-align: bottom;
+  border-top: rgba(0, 0, 0, 0);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.table th, .table td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid rgba(255, 255, 255, 0.6);
 }
 body{
   display: flex;
@@ -13,7 +24,7 @@ body{
   align-items: center;
   min-height: 100vh;
   flex-wrap: wrap;
-  background: #00a379;
+  background: #ffffff;
 }
 
 .box .glass{
@@ -82,13 +93,16 @@ body{
 }
 
 .card-header {
-  color: white;
+  color: #ffffff;
   background-color: transparent;
   text-align: center;
 }
 .card {
-  width: 600px;
   background-color: transparent;
+}
+.card-light {
+  min-width: 55vw;
+  width:auto;
 }
 .card-footer {
   background-color: transparent;
@@ -101,7 +115,7 @@ body{
   bottom: 0;
   width: 100%;
   background-color: black;
-  color: white;
+  color: #ffffff;
   text-align: center;
   margin-top: 20px;
 }
@@ -130,7 +144,7 @@ label span:after {
 }
 
 label span:before {
-  border: 1px solid #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.6);
   width: 30px;
   height: 30px;
   margin-right: 10px;
@@ -141,7 +155,7 @@ label span:before {
 .emptybox {
   height: 31px;
   width: 32px;
-  border: 1px solid darkgray;
+  border: 0.5px solid #a9a9a9;
   display: inline-block;
 }
 
@@ -149,7 +163,7 @@ label span:before {
   height: 31px;
   width: 32px;
   background:url(src/assets/x1-01.png) no-repeat top left;
-  border: 1px solid darkgray;
+  border: 1px solid #ffffff;
   display: inline-block;
 }
 

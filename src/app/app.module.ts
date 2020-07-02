@@ -14,8 +14,8 @@ import { AdminComponent } from './admin/admin.component';
 import { ChoiceComponent } from './choice/choice.component';
 import { LOCALE_ID } from '@angular/core';
 import localePl from '@angular/common/locales/pl';
-import {registerLocaleData} from "@angular/common";
-import {OkDialogComponent} from "./ok-dialog/ok-dialog.component";
+import {registerLocaleData} from '@angular/common';
+import {OkDialogComponent} from './ok-dialog/ok-dialog.component';
 registerLocaleData(localePl, 'pl');
 
 @NgModule({
