@@ -5,8 +5,8 @@ import {Election} from "./_model/election";
   providedIn: 'root'
 })
 export class GService {
-  data = 'http://10.10.0.200:2019';  //development
-  // data = 'https://vote.wsi.edu.pl/api'; //production
+  // data = 'http://10.10.0.200:2019';  //development
+  data = 'https://vote.wsi.edu.pl/api'; //production
   uuid: string;
   wdauth: string;
   selected_election: Election;

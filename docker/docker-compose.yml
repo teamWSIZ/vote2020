@@ -1,13 +1,13 @@
 version: "3"
 services:
   vote:
-    image: rq170/vote:1.0.4
+    image: rq170/vote:1.0.5
     deploy:
       replicas: 3
       resources:
         limits:
           cpus: "0.5"
-          memory: 100M
+          memory: 60M
 
       restart_policy:
         condition: on-failure

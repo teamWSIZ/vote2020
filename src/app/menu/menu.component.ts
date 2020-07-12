@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {GService} from '../g.service';
 import {GuardianService} from "../guardian.service";
-import {AdminguardianService} from "../adminguardian.service";
 
 @Component({
   selector: 'app-menu',
@@ -10,13 +9,12 @@ import {AdminguardianService} from "../adminguardian.service";
 })
 export class MenuComponent implements OnInit {
 
-  constructor(public g: GService, public guard: GuardianService, public admin: AdminguardianService) { }
+  constructor(public g: GService, public guard: GuardianService) { }
 
   ngOnInit() {
   }
 
   logout() {
     this.guard.logged_in = false;
-    this.admin.is_admin = false;
   }
 }

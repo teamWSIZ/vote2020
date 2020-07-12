@@ -1,6 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {GuardianService} from "../guardian.service";
-import {AdminguardianService} from "../adminguardian.service";
 import {Md5} from "ts-md5";
 import {Router} from "@angular/router";
 import {GService} from "../g.service";
@@ -23,7 +22,7 @@ export class LoginComponent implements OnInit {
   constructor(private http: HttpClient,
               private g: GService,
               private router: Router,
-              public guard: GuardianService, public admin: AdminguardianService) {
+              public guard: GuardianService) {
 
   }
 
